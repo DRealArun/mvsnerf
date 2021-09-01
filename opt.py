@@ -26,7 +26,7 @@ def config_parser(cmd=None):
     parser.add_argument('--net_type', type=str, default='v0',
                         choices=['v0', 'v1'])
     parser.add_argument('--dataset_name', type=str, default='blender',
-                        choices=['dtu', 'blender', 'llff', 'dtu_ft'])
+                        choices=['dtu', 'blender', 'llff', 'dtu_ft', 'blender_temporal'])
     parser.add_argument('--use_color_volume', default=False, action="store_true",
                         help='project colors into a volume without indexing from image everytime')
     parser.add_argument('--use_density_volume', default=False, action="store_true",
