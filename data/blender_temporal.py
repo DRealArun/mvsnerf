@@ -162,7 +162,7 @@ class BlenderTemporalDataset(Dataset):
             img = self.transform(img)  # (3, h, w)
             img = img.view(3, -1).permute(1, 0)  # (h*w, 3) RGBA
 
-            dep_resized = cv2.resize(dep_resized, (w, h), interpolation=cv2.INTER_LANCZOS4)
+            dep_resized = cv2.resize(dep, (w, h), interpolation=cv2.INTER_LANCZOS4)
             dep_resized = torch.from_numpy(dep_resized)
             dep_resized = dep_resized.view(1, -1).permute(1, 0)
             self.all_masks += [dep_resized > 0]
