@@ -231,8 +231,7 @@ class BlenderTemporalDataset(Dataset):
 
         imgs, proj_mats = [], []
         intrinsics, c2ws, w2cs = [],[],[]
-        for i,idx in enumerate(ids):
-            frame = meta['frames'][idx]
+        for i,frame in enumerate(meta['frames']):
             cam_id, _ = self._get_frame_n_camera_ids(frame)
             orientation = self._get_camera_orientation(cam_id, meta)
             translation = self._get_camera_location(cam_id, meta)
